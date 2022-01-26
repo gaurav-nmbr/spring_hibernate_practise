@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:util="http://www.springframework.org/schema/util"
+     xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+    
+    
+    
+       <!--  stand alone list  -->
+       
+    <util:list list-class="java.util.LinkedList"  id="mybflist">
+    <value>aman</value>
+    <value>raghav</value>
+    <value>sahdu baba</value>
+    <value>ramdev</value>
+    </util:list>  
+    
+    <!--  stand alone map  -->
+    
+    <util:map map-class="java.util.HashMap" id="fees">
+    <entry key="spring framework" value="8000" />
+    <entry key="python django" value="4000" />
+    <entry key="Hibernate" value="2000" />
+    
+    </util:map>
+    <util:properties id="db">
+    <prop key="name"> gaurav </prop>
+    <prop key="pass"> 1234</prop>
+    
+    </util:properties>
+    
+     
+    <bean class="com.springcore.stdcollection.Person" name="person1" >
+    <property name="friends" ref="mybflist"></property>
+    <property name="feestructure" ref="fees"></property>
+    <property name="prop" ref="db"></property>
+    
+  
+ <!--  <property name="friends">
+    	<ref bean="mybflist" />
+    </property>  -->   
+    
+    
+    </bean>
+    
+     
+</beans> 
